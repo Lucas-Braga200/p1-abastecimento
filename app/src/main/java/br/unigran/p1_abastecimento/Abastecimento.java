@@ -3,6 +3,16 @@ package br.unigran.p1_abastecimento;
 import java.util.Date;
 
 public class Abastecimento {
+    Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     Float quilometragemAtual;
     Float quantidadeAbastecida;
     Date dia;
