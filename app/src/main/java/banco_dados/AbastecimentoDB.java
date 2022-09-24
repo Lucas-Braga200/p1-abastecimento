@@ -35,9 +35,14 @@ public class AbastecimentoDB {
             SimpleDateFormat formatter = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
             dados.clear();
             conexao = db.getReadableDatabase();
-            String names[] ={"id", "quilometragemAtual", "quantidadeAbastecida", "dia", "valor"};
+            String names[] ={"id", "quilometragem_atual", "quantidade_abastecida", "dia", "valor"};
             Cursor query = conexao.query("abastecimento", names, null, null, null, null, "dia");
+            Integer i = 0;
+            System.out.println("LISTAGEM");
             while (query.moveToNext()) {
+                System.out.println(i);
+                System.out.println(formatter.parse(query.getString(3)));
+                i++;
                 Abastecimento abastecimento = new Abastecimento();
                 abastecimento.setId(Integer.parseInt(query.getString(0)));
                 abastecimento.setQuilometragemAtual(Float.parseFloat(query.getString(1)));

@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/QuilometragemAtual"
+        android:id="@+id/quilometragemAtual"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/QuantidadeAbastecida"
+        android:id="@+id/quantidadeAbastecida"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -38,10 +38,10 @@
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/QuilometragemAtual" />
+        app:layout_constraintTop_toBottomOf="@+id/quilometragemAtual" />
 
     <EditText
-        android:id="@+id/Data"
+        android:id="@+id/dia"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -53,11 +53,11 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/QuantidadeAbastecida"
+        app:layout_constraintTop_toBottomOf="@+id/quantidadeAbastecida"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/Valor"
+        android:id="@+id/valor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -69,34 +69,37 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Data"
+        app:layout_constraintTop_toBottomOf="@+id/dia"
         android:autofillHints="" />
 
     <Button
-        android:id="@+id/Salvar"
+        android:id="@+id/salvar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/salvar"
+        android:onClick="salvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Valor" />
+        app:layout_constraintTop_toBottomOf="@+id/valor" />
 
     <Button
-        android:id="@+id/Calcular"
+        android:id="@+id/calcular"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="@string/calcular"
+        android:onClick="calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Salvar" />
+        app:layout_constraintTop_toBottomOf="@+id/salvar" />
 
     <ListView
+        android:id="@+id/listagem"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -106,6 +109,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Calcular" />
+        app:layout_constraintTop_toBottomOf="@+id/calcular" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

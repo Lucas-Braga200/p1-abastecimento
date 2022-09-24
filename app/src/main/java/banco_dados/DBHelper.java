@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(@Nullable Context content) {
-        super(content, "BancoAbastecimento", null,  1);
+        super(content, "BancoAbastecimento", null,  2);
     }
 
     @Override
@@ -17,7 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "create table abastecimento(" +
                         "id integer primary key autoincrement," +
                         "quilometragem_atual real," +
-                        "quilometragem_abastecida real," +
+                        "quantidade_abastecida real," +
                         "dia Date," +
                         "valor real);"
         );
@@ -25,11 +25,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("drop table abastecimento;");
         sqLiteDatabase.execSQL(
                 "create table abastecimento(" +
                         "id integer primary key autoincrement," +
                         "quilometragem_atual real," +
-                        "quilometragem_abastecida real," +
+                        "quantidade_abastecida real," +
                         "dia Date," +
                         "valor real);"
         );

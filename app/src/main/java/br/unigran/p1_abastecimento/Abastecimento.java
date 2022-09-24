@@ -1,6 +1,8 @@
 package br.unigran.p1_abastecimento;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Abastecimento {
     Integer id;
@@ -48,5 +50,16 @@ public class Abastecimento {
 
     public void setValor(Float valor) {
         this.valor = valor;
+    }
+
+    @Override
+    public String toString() {
+        try {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+            return formatter.format(dia) + " " + quilometragemAtual + " - " + quantidadeAbastecida;
+        } catch (Exception e) {
+            System.out.println(e);
+            return dia + " " + quilometragemAtual + " - " + quantidadeAbastecida;
+        }
     }
 }
